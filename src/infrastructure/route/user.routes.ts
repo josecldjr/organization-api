@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { CreateUserUserCase } from "../../app/usecases/create-user";
-import { UserRepository } from "./repository/user.repository";
+import { UserRepository } from "../repository/user.repository";
 
 export const userRouter = Router();
 

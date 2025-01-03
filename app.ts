@@ -1,8 +1,6 @@
 import express, { Request, Response } from "express";
 import { userRouter } from './src/infrastructure/route/user.routes';
-import { prisma } from "./src/infrastructure/route/database/connection";
-
-
+import { prisma } from "./src/infrastructure/database/connection";
 
 const app = express();
 const port = process.env.PORT || 3000;

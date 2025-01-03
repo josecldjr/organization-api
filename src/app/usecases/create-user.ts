@@ -1,5 +1,4 @@
-import { IUser } from "../../domain/models/IUser";
-import { UserRepository } from "../../infrastructure/route/repository/user.repository";
+import { UserRepository } from "../../infrastructure/repository/user.repository";
 import { CreateUserInputDTO, CreateUserResponseDto } from "../dto/create-user.dto";
 
 export class CreateUserUserCase {

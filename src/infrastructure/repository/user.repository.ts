@@ -1,10 +1,10 @@
-import { IUser } from "../../../domain/models/IUser";
+import { IUser } from "../../domain/models/IUser";
 import { prisma } from "../database/connection";
 
 export class UserRepository {
 
     async create(input: Partial<IUser>): Promise<IUser> {
-        const user: IUser = prisma.user.create({
+        const user: IUser = await prisma.user.create({
             data: {
                 email: input.email!,
                 password: input.password!,
