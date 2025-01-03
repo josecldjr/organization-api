@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { CreateUserUserCase } from "../../app/usecases/create-user";
+import { CreateUserUserCase } from "../../app/usecases/create-user.action";
 import { UserRepository } from "../repository/user.repository";
+import { validatePayload } from "../helpers/validation";
+import { createUserValidation } from "../../app/validation/create-user.validation";
 
 export const userRouter = Router();
-
-userRouter.post('/', async (req, res) => {
-
+userRouter.post('/', validatePayload({ body: createUserValidation }), async (req, res) => {
     const input = req.body
     const useCase = new CreateUserUserCase(new UserRepository)
 
@@ -15,10 +15,6 @@ userRouter.post('/', async (req, res) => {
 
 
 userRouter.get('/', async (req, res) => {
-    const input = req.body
-    console.log('LOG', input);
-    const useCase = new CreateUserUserCase(new UserRepository)
-
-    const Response = await useCase.run(input)
+    res.send('')
 })
 
