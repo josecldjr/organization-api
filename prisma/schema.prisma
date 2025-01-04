@@ -54,7 +54,7 @@ model PccConfiguration {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  pccOrgId       String
+  pccOrgId       Int
   pccOrgUuid     String
   organization   Organization @relation(fields: [organizationId], references: [id])
   organizationId String       @unique

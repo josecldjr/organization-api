@@ -3,6 +3,7 @@ import { CreateUserUseCase } from "../../app/usecases/create-user.action";
 import { UserRepository } from "../repository/user.repository";
 import { validatePayload } from "../middleware/validation";
 import { createUserValidation } from "../../app/validation/create-user.validation";
+import { retrieveTokenData } from "../helpers/auth";
 
 export const userRouter = Router();
 userRouter.post('/', validatePayload({ body: createUserValidation }), async (req, res) => {
@@ -15,6 +16,6 @@ userRouter.post('/', validatePayload({ body: createUserValidation }), async (req
 
 
 userRouter.get('/', async (req, res) => {
-    res.send('')
+    res.json(retrieveTokenData(req))
 })
 

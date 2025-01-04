@@ -19,7 +19,7 @@ export class EmailLoginUsecase {
             throw new BadRequestError('User or password did not match')
         }
 
-        const { expiresAt, token } = generateJwt(user.id, user.email)
+        const { expiresAt, token } = generateJwt(user.id, user.email, user.organizationId)
 
         return {
             expiration: expiresAt,

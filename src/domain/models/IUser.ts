@@ -6,4 +6,5 @@ export interface IUser {
     name: string
     facilities: IFacility[];
     password?: string
+    organizationId: string
 }

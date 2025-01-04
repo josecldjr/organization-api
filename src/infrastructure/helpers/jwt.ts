@@ -6,6 +6,7 @@ import ms from "ms"
 export interface JwtPayload {
     userId: string
     username: string
+    organizationId: string
 }
 
 interface JwtResponse {
@@ -22,8 +23,8 @@ export function verifyJwt(token: string): JwtPayload | null {
     }
 }
 
-export function generateJwt(userId: string, username: string): JwtResponse {
-    const payload: JwtPayload = { userId, username }
+export function generateJwt(userId: string, username: string, organizationId: string): JwtResponse {
+    const payload: JwtPayload = { userId, username, organizationId }
 
     const token = jwt.sign(payload, JWT_SECRET, { expiresIn: JWT_EXPIRATION })
 

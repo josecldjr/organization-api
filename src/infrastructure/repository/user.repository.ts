@@ -8,7 +8,8 @@ export class UserRepository {
             data: {
                 email: input.email!,
                 password: input.password!,
-                name: input.name!
+                name: input.name!,
+                organizationId: input.organizationId
             }
         }) as any as IUser
 

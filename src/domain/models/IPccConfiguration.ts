@@ -2,7 +2,7 @@ import { IOrganization } from "./IOrganization";
 
 export interface IPccConfiguration {
     id: string;
-    pccOrgId: string;
+    pccOrgId: number;
     pccOrgUuid: string;
     organizationId: number;
     organization: IOrganization;
