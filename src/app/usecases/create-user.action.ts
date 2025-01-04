@@ -2,7 +2,7 @@ import { encryptPassword } from "../../infrastructure/helpers/password.helper";
 import { UserRepository } from "../../infrastructure/repository/user.repository";
 import { CreateUserInputDTO, CreateUserResponseDto } from "../dto/create-user.dto";
 
-export class CreateUserUserCase {
+export class CreateUserUseCase {
 
     constructor(private userRepository: UserRepository) { }
 
