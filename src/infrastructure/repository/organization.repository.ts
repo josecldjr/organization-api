@@ -27,8 +27,18 @@ export class OrganizationRepository {
             include: {
                 facilities: true,
                 pccConfiguration: true,
+                users: true
             }
         }) as unknown as IOrganization
+    }
+
+    async list(): Promise<IOrganization[]> {
+        return prisma.organization.findMany({
+            include: {
+                facilities: true,
+                users: true
+            }
+        }) as unknown as IOrganization[]
     }
 
 }

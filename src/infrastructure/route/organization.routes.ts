@@ -9,6 +9,7 @@ import { authenticateJWT } from "../middleware/authentication";
 import { validatePayload } from "../middleware/validation";
 import { OrganizationRepository } from "../repository/organization.repository";
 import { PccConfigurationRepository } from "../repository/pcc-configuration.repository";
+import { ListOrganizationsUseCase } from "../../app/usecases/list-organizations.action";
 
 export const organizationRouter = Router();
 
@@ -25,6 +26,12 @@ organizationRouter.get('/', async (req, res) => {
     const useCase = new GetOrganizationUseCase(new OrganizationRepository)
 
     res.json(await useCase.run({ id: organizationId }))
+})
+
+organizationRouter.get('/all', async (req, res) => {
+    const useCase = new ListOrganizationsUseCase(new OrganizationRepository)
+
+    res.json(await useCase.run())
 })
 
 
