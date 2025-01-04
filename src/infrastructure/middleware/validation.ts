@@ -6,11 +6,11 @@ export const validatePayload =
         (req: Request, res: Response, next: NextFunction): void => {
             try {
                 if (schemas.body) {
-                    req.body = schemas.body.parse(req.body);
+                    req.body = schemas.body.parse({ ...req.body, ...req.params });
                 }
 
                 if (schemas.query) {
-                    req.query = schemas.query.parse(req.query);
+                    req.query = schemas.query.parse({ ...req.query, ...req.params });
                 }
 
                 next();

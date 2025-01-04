@@ -6,6 +6,7 @@ import { authRouter } from "./src/infrastructure/route/auth.routes";
 import { errorHandler } from "./src/infrastructure/middleware/error-handler";
 import { organizationRouter } from "./src/infrastructure/route/organization.routes";
 import { responseFilter } from "./src/infrastructure/middleware/sucess-response";
+import { faclitiesRouter } from "./src/infrastructure/route/facilities.routes";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -18,6 +19,8 @@ app.get("/health", (req: Request, res: Response) => {
 app.use("/user", userRouter);
 app.use("/auth", authRouter);
 app.use("/organization", organizationRouter);
+app.use("/facility", faclitiesRouter);
+
 app.use(errorHandler)
 
 async function main() {

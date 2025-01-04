@@ -4,7 +4,7 @@ import { IUser } from "./IUser";
 export interface IFacility {
     id: string;
     name: string;
-    organizationId: number;
+    organizationId: string;
     organization: IOrganization;
     users: IUser[];
 }
