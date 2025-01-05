@@ -21,6 +21,8 @@ export class EmailLoginUsecase {
 
         const { expiresAt, token } = generateJwt(user.id, user.email, user.organizationId)
 
+        delete user.password
+
         return {
             expiration: expiresAt,
             loginAt: new Date(),

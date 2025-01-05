@@ -7,11 +7,13 @@ import { errorHandler } from "./src/infrastructure/middleware/error-handler";
 import { organizationRouter } from "./src/infrastructure/route/organization.routes";
 import { responseFilter } from "./src/infrastructure/middleware/sucess-response";
 import { faclitiesRouter } from "./src/infrastructure/route/facilities.routes";
+import cors from 'cors';
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(cors());
 app.use(responseFilter)
 app.get("/health", (req: Request, res: Response) => {
     res.send("ok");

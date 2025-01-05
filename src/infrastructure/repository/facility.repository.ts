@@ -46,5 +46,5 @@ export class FacilityRepository {
         })
     }
 
-    as
+
 }

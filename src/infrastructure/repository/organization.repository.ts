@@ -36,7 +36,7 @@ export class OrganizationRepository {
         return prisma.organization.findMany({
             include: {
                 facilities: true,
-                users: true
+                users: false
             }
         }) as unknown as IOrganization[]
     }
