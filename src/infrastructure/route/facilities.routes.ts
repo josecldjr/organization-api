@@ -7,7 +7,7 @@ import { FacilityRepository } from "../repository/facility.repository";
 import { createFacilityValidation } from "../../app/validation/facilities/create-facility.validation";
 import { UpdateFacilityAction } from "../../app/usecases/facilities/update-facility.action";
 import { updateFacilityValidation } from "../../app/validation/facilities/update-facility.validation";
-import { RemoveFacilityAction } from "../../app/usecases/facilities/remove-facility.action copy";
+import { RemoveFacilityAction } from "../../app/usecases/facilities/remove-facility.action";
 import { deleteFacilityValidation } from "../../app/validation/facilities/delete-facility.validation";
 
 export const faclitiesRouter = Router();
